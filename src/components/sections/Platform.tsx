@@ -5,8 +5,8 @@ import { Eyebrow } from "../shared/Eyebrow";
 
 export function Platform() {
   return (
-    <section id="platform" className="py-section-y">
-      <div className="container  mx-auto px-gutter">
+    <section id="platform" className="md:py-section-y">
+      <div className="container mx-auto md:px-gutter px-6">
         <Reveal className="flex flex-col items-start text-left gap-4 mb-14">
           <Eyebrow title="platform" order={1} />
           <h2 className="font-display text-section-title font-medium tracking-title leading-title m-0">

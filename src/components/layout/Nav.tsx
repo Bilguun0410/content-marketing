@@ -5,7 +5,12 @@ import { cn } from "@/lib/utils";
 import { Logo } from "@/components/shared";
 import { Button } from "@/components/ui";
 import DarkMode from "./dark-mode";
-import { IconArrowRight } from "@tabler/icons-react";
+import {
+  IconArrowRight,
+  IconMenu,
+  IconMenu2,
+  IconX,
+} from "@tabler/icons-react";
 
 const links = [
   { label: "Platform", href: "#features" },
@@ -72,18 +77,12 @@ export function Nav() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16">
-            <path
-              d="M2 4h12M2 8h12M2 12h12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            />
-          </svg>
+          {(mobileOpen && <IconX size={16} />) || <IconMenu2 size={16} />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="container mx-auto px-gutter flex flex-col gap-4 py-5 border-t border-t-line mt-3">
+        <div className="container mx-auto px-6 flex flex-col gap-4 py-5 border-t border-t-line mt-3">
           {links.map((l) => (
             <a
               key={l.label}

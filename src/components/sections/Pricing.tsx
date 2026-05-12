@@ -57,8 +57,8 @@ export function Pricing() {
   const [annual, setAnnual] = useState(true);
 
   return (
-    <section id="pricing" className="py-section-y">
-      <div className="container mx-auto px-gutter">
+    <section id="pricing" className="md:py-section-y py-10">
+      <div className="container mx-auto md:px-gutter px-6">
         <Reveal className="flex flex-col items-center text-center gap-4 mb-14">
           <Eyebrow title="pricing" order={5} />
           <h2 className="font-display text-section-title font-medium tracking-[-0.03em] leading-[0.96] m-0">
@@ -99,7 +99,10 @@ export function Pricing() {
           </div>
         </Reveal>
 
-        <Reveal stagger className="grid grid-cols-3 gap-5 items-stretch max-[900px]:grid-cols-1">
+        <Reveal
+          stagger
+          className="grid grid-cols-3 gap-5 items-stretch max-[900px]:grid-cols-1"
+        >
           {tiers.map((t) => {
             const price = annual ? t.annual : t.monthly;
             return (
@@ -108,17 +111,20 @@ export function Pricing() {
                 className={cn(
                   "relative bg-bg-card rounded-(--radius) transition-[border-color,transform] duration-200 hover:border-line-strong",
                   t.featured
-                    ? "border border-line-strong -translate-y-2 max-[900px]:translate-y-0"
+                    ? "border border-line-strong border-t-8 border-t-cyan hover:border-t-violet -translate-y-2 max-[900px]:translate-y-0"
                     : "border border-line",
                 )}
-                style={t.featured ? { boxShadow: "0 20px 60px -20px rgba(34,211,238,0.25)" } : undefined}
+                style={
+                  t.featured
+                    ? { boxShadow: "0 20px 60px -20px rgba(34,211,238,0.25)" }
+                    : undefined
+                }
               >
-                {t.featured && (
-                  <div className="absolute -top-px -left-px -right-px h-1 bg-grad rounded-tl-(--radius) rounded-tr-(--radius)" />
-                )}
                 <div className="p-7">
                   <div className="flex justify-between items-center mb-1">
-                    <div className="font-display text-[24px] font-medium">{t.name}</div>
+                    <div className="font-display text-[24px] font-medium">
+                      {t.name}
+                    </div>
                     {t.featured && <Tag color="cyan">popular</Tag>}
                   </div>
                   <div className="text-muted text-[13px] mb-6">{t.tag}</div>
@@ -136,7 +142,9 @@ export function Pricing() {
                         {price === 0 ? "Free" : `$${price}`}
                       </motion.span>
                     </AnimatePresence>
-                    {price > 0 && <span className="text-muted text-sm">/ mo</span>}
+                    {price > 0 && (
+                      <span className="text-muted text-sm">/ mo</span>
+                    )}
                   </div>
                   <div className="text-dim text-[12px] font-mono mb-6">
                     {price === 0
@@ -160,7 +168,12 @@ export function Pricing() {
                   <ul className="list-none p-0 mt-6 mb-0 flex flex-col gap-3">
                     {t.features.map((f) => (
                       <li key={f} className="flex gap-3 text-sm text-ink-soft">
-                        <svg width="16" height="16" viewBox="0 0 16 16" className="shrink-0 mt-0.5">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          className="shrink-0 mt-0.5"
+                        >
                           <path
                             d="M3 8.5l3 3 7-7"
                             fill="none"

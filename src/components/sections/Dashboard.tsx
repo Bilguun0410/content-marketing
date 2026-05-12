@@ -214,8 +214,8 @@ export function Dashboard() {
   ];
 
   return (
-    <section id="dashboard" className="bg-bg-soft py-section-y">
-      <div className="container mx-auto px-gutter">
+    <section id="dashboard" className="bg-bg-soft md:py-section-y py-10">
+      <div className="container mx-auto md:px-gutter px-6">
         <Reveal className="flex flex-col items-center text-center gap-4 mb-14">
           <div className="font-mono text-[12px] tracking-[0.08em] text-dim">
             <b className="text-cyan font-medium">[02]</b> / WORKSPACE

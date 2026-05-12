@@ -7,8 +7,17 @@ import { cn } from "@/lib/utils";
 function FeatureCalendar() {
   const days = Array.from({ length: 35 }, (_, i) => i);
   const posts: Record<number, string> = {
-    3: "cyan", 6: "violet", 9: "lime", 12: "cyan", 15: "pink",
-    18: "violet", 20: "cyan", 22: "lime", 25: "violet", 28: "cyan", 31: "pink",
+    3: "cyan",
+    6: "violet",
+    9: "lime",
+    12: "cyan",
+    15: "pink",
+    18: "violet",
+    20: "cyan",
+    22: "lime",
+    25: "violet",
+    28: "cyan",
+    31: "pink",
   };
   return (
     <div className="p-7.5 relative h-full">
@@ -17,7 +26,9 @@ function FeatureCalendar() {
       </div>
       <div className="grid grid-cols-7 gap-1.5">
         {["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map((d) => (
-          <div key={d} className="font-mono text-[9px] text-dim text-center">{d}</div>
+          <div key={d} className="font-mono text-[9px] text-dim text-center">
+            {d}
+          </div>
         ))}
         {days.map((d) => (
           <div
@@ -40,9 +51,19 @@ function FeatureCalendar() {
 
 function FeatureHooks() {
   const hooks = [
-    { txt: "I rebuilt our pricing page in 30 minutes — here's what changed.", score: 94, on: true },
-    { txt: "Most pricing pages are wrong. Here's a fix that took us 30 min.", score: 88 },
-    { txt: "The 30-minute pricing page rewrite that doubled trials.", score: 81 },
+    {
+      txt: "I rebuilt our pricing page in 30 minutes — here's what changed.",
+      score: 94,
+      on: true,
+    },
+    {
+      txt: "Most pricing pages are wrong. Here's a fix that took us 30 min.",
+      score: 88,
+    },
+    {
+      txt: "The 30-minute pricing page rewrite that doubled trials.",
+      score: 81,
+    },
   ];
   return (
     <div className="p-6 relative h-full flex flex-col gap-3 justify-between">
@@ -53,12 +74,12 @@ function FeatureHooks() {
             key={i}
             className={cn(
               "p-3 rounded-[10px] text-[12px] leading-[1.4] border",
-              h.on
-                ? "bg-cyan/8 border-cyan/35"
-                : "bg-white/3 border-line",
+              h.on ? "bg-cyan/8 border-cyan/35" : "bg-white/3 border-line",
             )}
           >
-            <div className={cn("mb-1.5", h.on ? "text-ink" : "text-ink-soft")}>{h.txt}</div>
+            <div className={cn("mb-1.5", h.on ? "text-ink" : "text-ink-soft")}>
+              {h.txt}
+            </div>
             <div className="flex justify-between items-center font-mono text-[10px]">
               <span className={h.score > 90 ? "text-lime" : "text-muted"}>
                 ● {h.score}/100
@@ -96,7 +117,9 @@ function FeatureMatch() {
               </div>
             </div>
             <div className="text-right">
-              <div className="font-mono text-[11px] text-lime">{m.fit}% fit</div>
+              <div className="font-mono text-[11px] text-lime">
+                {m.fit}% fit
+              </div>
               <div className="font-mono text-[11px] text-muted">{m.fee}</div>
             </div>
           </div>
@@ -108,29 +131,41 @@ function FeatureMatch() {
 
 function FeatureSignals() {
   const points = [10, 28, 22, 38, 32, 48, 42, 58, 64, 56, 72, 88];
-  const w = 100, h = 60;
+  const w = 100,
+    h = 60;
   const max = Math.max(...points);
   const path = points
-    .map((p, i) => `${i === 0 ? "M" : "L"} ${(i / (points.length - 1)) * w} ${h - (p / max) * h}`)
+    .map(
+      (p, i) =>
+        `${i === 0 ? "M" : "L"} ${(i / (points.length - 1)) * w} ${h - (p / max) * h}`,
+    )
     .join(" ");
 
   return (
     <div className="p-7.5 h-full flex flex-col gap-4 justify-between">
       <div className="flex justify-between items-center">
-        <div className="font-mono text-[11px] text-muted">WEEKLY BRIEF · OCT 21</div>
+        <div className="font-mono text-[11px] text-muted">
+          WEEKLY BRIEF · OCT 21
+        </div>
         <Pill>ready</Pill>
       </div>
       <div className="flex flex-col gap-2 max-w-95">
         <div className="text-[14px] text-ink-soft">
-          <span className="text-lime">+38%</span> reach lift from your Tue/Thu posts. Audience leans toward
+          <span className="text-lime">+38%</span> reach lift from your Tue/Thu
+          posts. Audience leans toward
           <span className="text-cyan"> &quot;build-in-public&quot;</span>{" "}
           threads over tutorials this month.
         </div>
         <div className="text-[12.5px] text-muted">
-          Recommend: 2× build-in-public · 1× contrarian take · drop &quot;how-to&quot; series.
+          Recommend: 2× build-in-public · 1× contrarian take · drop
+          &quot;how-to&quot; series.
         </div>
       </div>
-      <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" className="w-full h-20">
+      <svg
+        viewBox={`0 0 ${w} ${h}`}
+        preserveAspectRatio="none"
+        className="w-full h-20"
+      >
         <defs>
           <linearGradient id="sig-grad" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%" stopColor="var(--cyan)" stopOpacity="0.4" />
@@ -180,7 +215,7 @@ const items = [
 export function Features() {
   return (
     <section id="features" className="py-section-y">
-      <div className="container mx-auto px-gutter">
+      <div className="container mx-auto md:px-gutter px-6">
         <Reveal className="mb-14">
           <div className="font-mono text-[12px] tracking-[0.08em] text-dim mb-4">
             <b className="text-cyan font-medium">[01]</b> / PLATFORM
@@ -194,15 +229,18 @@ export function Features() {
           </p>
         </Reveal>
 
-        <Reveal stagger className="grid grid-cols-2 gap-5 max-[820px]:grid-cols-1">
+        <Reveal
+          stagger
+          className="md:grid flex md:overflow-x-hidden styled-scroll hide-scroll md:snap-none scroll-smooth max-[820px]:overflow-x-auto grid-cols-2 gap-5 max-[820px]:grid-cols-1"
+        >
           {items.map((f, i) => (
             <article
               key={i}
               className={cn(
-                "bg-bg-card border border-line rounded-(--radius) overflow-hidden flex transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-line-strong",
+                "bg-bg-card md:col-span-1 flex-1 snap-start border border-line rounded-(--radius) overflow-hidden flex transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-line-strong",
                 f.span === "wide"
-                  ? "col-span-2 flex-row min-h-90 max-[820px]:col-span-1 max-[820px]:flex-col max-[820px]:min-h-105"
-                  : "flex-col min-h-105",
+                  ? "col-span-2 flex-row min-h-90 max-[820px]:col-span-1 max-[820px]:flex-col max-[820px]:min-h-105 "
+                  : "flex-col min-h-105 ",
               )}
             >
               <div

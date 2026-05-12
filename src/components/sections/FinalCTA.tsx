@@ -4,7 +4,7 @@ import { Reveal, Btn, ArrowRight } from "@/components/shared";
 
 export function FinalCTA() {
   return (
-    <section className="py-25 relative overflow-hidden">
+    <section className="md:py-25 py-10 relative overflow-hidden">
       {/* Background blob */}
       <div
         className="absolute w-175 h-175 rounded-full pointer-events-none opacity-35"
@@ -17,7 +17,7 @@ export function FinalCTA() {
         }}
       />
 
-      <div className="container  mx-auto px-gutter relative z-2">
+      <div className="container mx-auto md:px-gutter px-6 relative z-2">
         <Reveal>
           <div className="p-[clamp(40px,6vw,80px)] text-center bg-[linear-gradient(135deg,var(--bg-card),var(--bg-soft))] border border-line-strong rounded-[var(--radius-lg)]">
             <h2 className="font-display text-[clamp(40px,6vw,84px)] font-medium tracking-[-0.03em] leading-[0.96] m-0 max-w-225 mx-auto">

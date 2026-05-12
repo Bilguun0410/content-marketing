@@ -11,7 +11,7 @@ const row = [...logos, ...logos];
 export function LogosBand() {
   return (
     <section className="py-15 border-t border-t-line">
-      <div className="container mx-auto px-gutter">
+      <div className="container mx-auto md:px-gutter">
         <div className="font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-muted text-center mb-8">
           Trusted by creators &amp; brands at
         </div>

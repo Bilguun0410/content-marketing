@@ -31,7 +31,7 @@ const stories = [
 
 export function Stories() {
   return (
-    <section id="stories" className="bg-bg-soft py-section-y relative">
+    <section id="stories" className="bg-bg-soft md:py-section-y py-10 relative">
       {/* Background blob */}
       <div
         className="absolute w-125 h-125 rounded-full pointer-events-none opacity-20"
@@ -43,7 +43,7 @@ export function Stories() {
         }}
       />
 
-      <div className="container mx-auto px-gutter relative z-1">
+      <div className="container mx-auto md:px-gutter px-6 relative z-1">
         <Reveal className="flex flex-col items-center text-center gap-4 mb-14">
           <div className="font-mono text-[12px] tracking-[0.08em] text-dim">
             <b className="text-cyan font-medium">[04]</b> / IN PRODUCTION

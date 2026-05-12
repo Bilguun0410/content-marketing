@@ -13,8 +13,8 @@ const stats = [
 
 export function StatsBand() {
   return (
-    <section className="py-section-y relative">
-      <div className="container mx-auto px-gutter">
+    <section className="md:py-section-y relative">
+      <div className="container mx-auto md:px-gutter">
         <Reveal
           stagger
           className="stats-grid grid grid-cols-4 max-[920px]:grid-cols-2 max-[560px]:grid-cols-1"

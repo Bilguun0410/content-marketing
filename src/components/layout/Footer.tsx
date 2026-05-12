@@ -78,8 +78,8 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-t-line pt-20 pb-10 bg-bg-soft">
-      <div className="container mx-auto px-gutter">
+    <footer className="border-t border-t-line md:pt-20 md:pb-10 pt-10 pb-4 bg-bg-soft">
+      <div className="container mx-auto md:px-gutter px-6">
         <div className="grid grid-cols-[1.4fr_repeat(4,1fr)] gap-10 max-[900px]:grid-cols-2 max-[540px]:grid-cols-1">
           <div className="flex flex-col gap-4 max-w-70">
             <Logo size={28} />

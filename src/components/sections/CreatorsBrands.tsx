@@ -171,10 +171,12 @@ function BrandsPanel() {
             </div>
           </div>
         ))}
-        <Btn kind="primary" href="#pricing" className="self-start mt-3">
-          <span>Talk to brand sales</span>
-          <ArrowRight />
-        </Btn>
+        <Button size={"lg"} className="self-start mt-3" role="link">
+          <Link href="#pricing" className="flex items-center gap-2">
+            <span>Talk to brand sales</span>
+            <ArrowRight />
+          </Link>
+        </Button>
       </div>
 
       {/* Brand brief preview card */}
@@ -229,7 +231,7 @@ export function CreatorsBrands() {
 
   return (
     <section id="creators" className="py-section-y relative overflow-hidden">
-      <div className="container mx-auto px-gutter">
+      <div className="container mx-auto md:px-gutter px-6">
         <Reveal className="flex justify-between items-end mb-14 flex-wrap gap-6">
           <div className="flex flex-col gap-4 max-w-160">
             <div className="font-mono text-[12px] tracking-[0.08em] text-dim">

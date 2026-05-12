@@ -16,7 +16,7 @@ export function Reveal({ children, className, stagger = false, delay = 0 }: Reve
 
   if (stagger) {
     return (
-      <div ref={ref} className={className}>
+      <div ref={ref} className={className} style={{scrollSnapType: 'x mandatory'}}>
         {Array.isArray(children)
           ? children.map((child, i) => (
               <motion.div
@@ -24,6 +24,7 @@ export function Reveal({ children, className, stagger = false, delay = 0 }: Reve
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: delay + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="flex-[0_0_80%] snap-center"
               >
                 {child}
               </motion.div>

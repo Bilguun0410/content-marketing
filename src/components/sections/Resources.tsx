@@ -34,8 +34,8 @@ const posts = [
 
 export function Resources() {
   return (
-    <section id="blog" className="py-section-y">
-      <div className="container mx-auto px-gutter">
+    <section id="blog" className="md:py-section-y py-10">
+      <div className="container mx-auto md:px-gutter px-6">
         <Reveal className="flex justify-between items-end mb-12 flex-wrap gap-6">
           <div className="flex flex-col gap-4 max-w-155">
             <div className="font-mono text-[12px] tracking-[0.08em] text-dim">
